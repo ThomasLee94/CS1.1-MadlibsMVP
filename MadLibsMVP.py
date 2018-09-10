@@ -20,5 +20,45 @@
 # Core data types: strings, integers, floats
 # Collection types: lists, tuples, dictionary
 
+noun = []
+verb = []
 
-sentence = "There is a house that needs to be fixed"
+def user_input():
+    input = input("type")
+    noun.append(input)
+    return input
+
+def sentence():
+
+    defaultSentence = "There is a *NOUN1* that needs to be a *VERB1*. A nearby *NOUN2* was upset by this."
+    noun1 = input("first noun: ")
+    noun2 = input("second noun: ")
+    verb1 = input("first verb: ")
+    defaultSentence.replace("*NOUN1*", noun1, 1)
+    defaultSentence.replace("*NOUN2*", noun2, 1)
+    defaultSentence.replace("*VERB1*", verb1, 1)
+    print(defaultSentence)
+
+def start():
+    initialGreeting1 = "Are you ready to play MadLibs? Let's start!"
+    print(initialGreeting1)
+
+    initialGreeting2 = "Here is the sentence!"
+    print(initialGreeting2)
+    sentence()
+
+
+def replace():
+    for i in range(len(sentence.defaultSentence)):
+        if i == "*NOUN*":
+            input = input("Enter a noun: ")
+            noun.append(input)
+
+        if i == "*VERB*":
+            input = input("Enter a verb: ")
+            verb.append(input)
+
+# def output():
+#     defaultSentence = defaultSentence.replace(/%s/g, noun[0]);
+
+sentence()
